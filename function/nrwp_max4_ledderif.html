@@ -1,0 +1,25 @@
+<script type="text/javascript">
+
+    function max(a,b,c,d){
+        if(a>b && a>c && a>d){
+            console.log("A is big.");
+        }
+        else if(b>a && b>c && b>d){
+            console.log("B is big.");
+        }
+        else if(c>a && c>b && c>d){
+            console.log("C is big.");
+        }
+        else{
+            console.log("D is big.");
+        }
+    }
+
+    var a = parseInt(prompt("Enter the number of A."));
+    var b = parseInt(prompt("Enter the number of B."));
+    var c = parseInt(prompt("Enter the number of C."));
+    var d = parseInt(prompt("Enter the number of D."));
+
+    max(a,b,c,d);
+
+</script>

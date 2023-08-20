@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+
+    .div{
+        background-color: black;
+    }
+
+    button{
+        width: 100px;
+    }
+    </style>
+
+
+    <div class="div">
+        <div class="container">
+            <div class="row pt-5 pb-5">
+                <div class="col-md-1 mx-3">
+                    <button onclick="viewAllRecord()" class="btn btn-primary">All</button>
+                </div>
+                <div class="col-md-1 mx-3">
+                    <button onclick="clothstData()" class="btn btn-primary">Clothes</button>
+                </div>
+                <div class="col-md-1 mx-3">
+                    <button onclick="beautyProductsData()" class="btn btn-primary">Beauty Products</button>
+                </div>
+                <div class="col-md-1 mx-3">
+                    <button onclick="shoesData()" class="btn btn-primary">Shoes</button>
+                </div>
+               
+            </div>
+        
+            <div class="row" id="allrecord">
+                
+            </div>
+        
+        </div>
+    </div>
+
+    
+    <script type="text/javascript">
+
+let data = [
+        {
+            name : "Over Waigheted tops",
+            price : 150,
+            image : "https://images.pexels.com/photos/4846355/pexels-photo-4846355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            category : "cloths"
+        },
+        {
+            name : "Denim",
+            price : 250,
+            image : "https://images.pexels.com/photos/862517/pexels-photo-862517.jpeg?auto=compress&cs=tinysrgb&w=600",
+            category : "cloths"
+        },
+        {
+            name : "Bata",
+            price : 200,
+            image : "https://images.pexels.com/photos/7153908/pexels-photo-7153908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            category : "shoes"
+        },
+        {    
+            name : "Casual",
+            price : 150,
+            image : "https://images.pexels.com/photos/5797579/pexels-photo-5797579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            category : "cloths"
+        },
+        {
+            name : "Lipstick",
+            price : 300,
+            image : "https://images.pexels.com/photos/3060257/pexels-photo-3060257.jpeg?auto=compress&cs=tinysrgb&w=600",
+            category : "beauty"
+        },
+        {
+            name : "Jeans",
+            price : 200,
+            image : "https://images.pexels.com/photos/1804075/pexels-photo-1804075.jpeg?auto=compress&cs=tinysrgb&w=600",
+            category : "cloths"
+        },
+
+        {
+            name : "Makeup",
+            price : 150,
+            image : "https://images.pexels.com/photos/2536009/pexels-photo-2536009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            category : "beauty"
+        },
+        {
+            name : "Eye linear",
+            price : 150,
+            image : "https://images.pexels.com/photos/3373746/pexels-photo-3373746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            category : "beauty"
+        },
+        {
+            name : "Black Shoes",
+            price : 25,
+            image : "https://images.pexels.com/photos/2043590/pexels-photo-2043590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            category : "shoes"
+        },
+        {
+            name : "Sneakers",
+            price : 100,
+            image : "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            category : "shoes"
+        },
+        {
+            name : "Nike",
+            price : 250,
+            image : "https://images.pexels.com/photos/1027130/pexels-photo-1027130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            category : "shoes"
+        },
+        {
+            name : "Eye shadow",
+            price : 300,
+            image : "https://images.pexels.com/photos/7956289/pexels-photo-7956289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            category : "beauty"
+        },
+           
+    ];
+    
+    viewAllRecord();
+
+    function viewAllRecord(){
+
+        let tbl = "";
+
+        data.map((val)=>{
+            tbl += `
+            <div class="col-md-4 pb-4">
+                    <div class="card">
+                        <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">${val.name}</h5>
+                        <p class="card-text">${val.category}</p>
+                        <a href="#" class="btn btn-primary">Order</a>
+                    </div>
+                </div>
+            </div> 
+                    `
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function clothstData(){
+        let category = "cloths";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function beautyProductsData(){
+        let category = "beauty";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+
+    function shoesData(){
+        let category = "shoes";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:300px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+
+    </script>
+</body>
+</html>

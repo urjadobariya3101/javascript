@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Budget</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="sub-container d-flex">
+                <!-- budget outline -->
+                <div class="total-amount">
+                    <h3>Budget</h3>
+                    <input type="number" id="t_amount" placeholder="Enter Total Amount">
+                    <button class="submit" id="submit_button">Set Budget</button>
+                </div>
+                <!-- Expanditure outline -->
+                <div class="expenses-amount">
+                    <h3>Expenses</h3>
+                    <input type="text" id="exp_name" placeholder="Enter Title Of Product">
+                    <input type="number" id="exp_amount" placeholder="Enter cost of product">
+                    <button class="submit" id="exp_checkout">Check Amount</button>
+                </div>
+            </div>
+            <!-- output  -->
+            <div class="calculation d-flex">
+                <div>
+                    <p>Total Buddget</p>
+                    <span id="total_budget">0</span>
+                </div>
+                <div>
+                    <p>Expenses</p>
+                    <span id="expenses">0</span>
+                </div>
+                <div>
+                    <p>Balance</p>
+                    <span id="balance">0</span>
+                </div>
+            </div>
+        </div>
+        <!-- List of the product -->
+        <div class="list">
+            <h3>Expenses List</h3>
+            <div class="list-container" id="list"></div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="budget.js"></script>
+</body>
+
+</html>
+
+

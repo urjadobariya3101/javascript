@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="5">
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+        </tr>
+        <tbody id="records"></tbody>
+    </table>
+    <button style="height: 40px;" onclick="run()">Click here to get records</button>
+    <script>
+        class Print{
+    constructor(arrayhe){}
+
+    tabledatapass(data){
+        var tbl = "";
+        data.map((access)=>{
+            tbl += `
+                    <tr>
+                    <td>${access.name}</td>
+                    <td>${access.email}</td>
+                    <td>${access.phone}</td>
+                    </tr>
+                    `
+        });
+        document.getElementById('records').innerHTML = tbl;
+    }
+
+}
+let data = [
+    {
+        name : "jay",
+        email : "jay@gmail.com",
+        phone : "12345",
+    },
+    {
+        name : "ajay",
+        email : "ajay@gmail.com",
+        phone : "12345",
+    },
+    {
+        name : "vijay",
+        email : "vijay@gmail.com",
+        phone : "12345",
+    },
+    {
+        name : "ashish",
+        email : "ashish@gmail.com",
+        phone : "12345",
+    },
+];
+let newobj = new Print;
+    function run(){
+        newobj.tabledatapass(data);
+    }
+    </script>
+</body>
+</html>

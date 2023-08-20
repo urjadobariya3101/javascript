@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <style>
+        .main {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #box1 {
+            height: 200px;
+            width: 200px;
+            background-color: chocolate;
+            margin: 30px;
+            margin-top: 100px;
+            transition: all 0.3s ease;
+            box-shadow: 10px 10px 5px grey;
+        }
+
+        #box2 {
+            height: 200px;
+            width: 200px;
+            background-color: chocolate;
+            margin: 30px;
+            margin-top: 100px;
+            transition: all 0.3s ease;
+            box-shadow: 10px 10px 5px grey;
+        }
+
+        #box3 {
+            height: 200px;
+            width: 200px;
+            background-color: chocolate;
+            margin: 30px;
+            margin-top: 100px;
+            transition: all 0.3s ease;
+            box-shadow: 10px 10px 5px grey;
+        }
+
+        img {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+        }
+
+        .btn {
+            margin-top: 100px;
+            height: 40px;
+            border: 0;
+            margin-left: 500px;
+        }
+    </style>
+
+    <div class="main">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"><img id="image" /></div>
+    </div>
+    <div class="btn btn-primary" id="btn" onclick="magic()">click for magic</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        /*change box's height and width*/
+        const box1 = document.getElementById('box1');
+
+        box1.addEventListener("mouseover", changeBoxHeight);
+        // box1.addEventListener("mouseout", restoreBoxwidth);
+
+        function changeBoxHeight() {
+            var randomHeight = Math.floor(Math.random() * 300) + 100;
+            var randomwidth = Math.floor(Math.random() * 300) + 100;
+            box1.style.height = randomHeight + "px";
+            box1.style.width = randomwidth + "px";
+        }
+
+        /* change box colour when the box is hover*/
+
+        const box2 = document.getElementById('box2');
+        box2.addEventListener("mousemove", changeBoxColor);
+
+        function getRandomColor() {
+            return "#" + Math.floor(Math.random() * 16777215).toString(16);
+        }
+        function changeBoxColor() {
+            let random = Math.floor(Math.random() * 10000);
+            box2.style.backgroundColor = `#${random}`;
+        }
+
+        /*image change */
+
+        const box3 = document.getElementById('box3');
+        let array = [{img:1}, {img:2}, {img:3}, {img:4}, {img:5}, {img:6} , {img:7} , {img:8} , {img:9} , {img:10}, {img:11}, {img:12}, {img:13}, {img:14}, {img:15}];
+
+        box3.addEventListener("click", changeImage);
+
+        function changeImage() {
+            let random = Math.floor(Math.random() * (0 - 15) + 15);
+            let image = random;
+            box3.style.background = `url(./images/${array[image].img}.jpg)`;
+            box3.style.backgroundSize = `cover`;
+        }
+        /*All function work at a tinme*/
+        function magic() {
+            setInterval(changeBoxHeight, 1000);
+            setInterval(changeBoxColor, 1000);
+            setInterval(changeImage, 1000);
+            document.getElementsByid('btn').style.display = "none";
+        }
+</script>
+</body>
+
+</html>

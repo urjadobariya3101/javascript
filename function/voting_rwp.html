@@ -1,0 +1,23 @@
+<script type="text/javascript">
+
+    function vote(a){
+
+        if(a<18){
+            return 1;
+        }
+        else{
+           return 2;
+        }
+    }
+
+    var a = parseInt(prompt("Enter the value of A : "));
+
+    var ans = vote();
+    if(ans == 1){
+        console.log("You are not eligible for voting.");
+    }
+    else{
+        console.log("You are eligible for voting.");
+    }
+
+</script>

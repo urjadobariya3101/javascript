@@ -1,0 +1,52 @@
+<script type="text/javascript">
+
+
+// ==========return with parameter function===================//
+    function max(a,b,c){
+        
+
+        if(a>b){
+            if(a>c){
+                return 1;
+            }
+            else{
+                return 3;
+            }
+        }
+        else{
+            if(b>a){
+                if(b>c){
+                    return 2;
+                }
+                else{
+                    return 3;
+                }
+            }
+            else{
+               if(c>a){
+                return 3;
+               }
+               else{
+                return 1;
+               }
+            }
+        }
+    }
+
+    var a = parseInt(prompt("Enter the value of A : "));
+    var b = parseInt(prompt("Enter the value of B : "));
+    var c = parseInt(prompt("Enter the value of C : "));
+
+    var ans = max(a,b,c);
+    console.log(ans);
+    if (ans == 1){
+        console.log("A is big.");
+    }
+    else if(ans == 2){
+        console.log("B is big.");
+    }
+    else{
+        console.log("C is big.");
+    }
+
+</script>

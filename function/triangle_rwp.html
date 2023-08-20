@@ -1,0 +1,53 @@
+<script type="text/javascript">
+
+
+//==================return with parameter function===============//
+    function triangle(a,b,c){
+
+        if(a + b + c == 180){
+            return 1;
+        }
+        else{
+            return 2;
+        }
+    }
+
+    var a = parseInt(prompt("Enter the value of A : "));
+    var b = parseInt(prompt("Enter the value of B : "));
+    var c = parseInt(prompt("Enter the value of C : "));
+
+    var ans = triangle(a,b,c);
+    if(ans == 1){
+        document.write("Triangle is valid.");
+    }
+    else{
+        document.write("Triangle is not valid.");
+    }
+
+    // ==============return with no parameter function===================//
+
+function trio(){
+
+var a = parseInt(prompt("Enter the value of A : "));
+var b = parseInt(prompt("Enter the value of B : "));
+var c = parseInt(prompt("Enter the value of C : "));
+
+if(a + b + c == 180){
+    return 1;
+}
+else{
+    return 2;
+}
+}
+
+
+var ans = trio();
+if(ans == 1){
+console.log("Triangle is valid.");
+}
+else{
+console.log("Triangle is not valid.");
+}
+
+
+</script>

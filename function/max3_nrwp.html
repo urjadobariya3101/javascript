@@ -1,0 +1,79 @@
+<script type="text/javascript">
+
+
+// ===============parameterized function with arguments===============//
+    function max(a,b,c){
+
+        if(a>b){
+            if(a>c){
+                console.log("A is big.");
+            }
+            else{
+                console.log("C is big.");
+            }
+        }
+        else{
+            if(b>a){
+                if(b>c){
+                    console.log("B is big.");
+                }
+                else{
+                    console.log("C is big.");
+                }
+            }
+            else{
+               if(c>a){
+                console.log("C is big.");
+               }
+               else{
+                console.log("A is big.");
+               }
+            }
+        }
+    }
+
+    var a = parseInt(prompt("Enter the value of A : "));
+    var b = parseInt(prompt("Enter the value of B : "));
+    var c = parseInt(prompt("Enter the value of C : "));
+
+    max(a,b,c);
+
+    // ==============parameterized funtion without arguments================//
+
+    function max(){
+
+if(a>b){
+    if(a>c){
+        console.log("A is big.");
+    }
+    else{
+        console.log("C is big.");
+    }
+}
+else{
+    if(b>a){
+        if(b>c){
+            console.log("B is big.");
+        }
+        else{
+            console.log("C is big.");
+        }
+    }
+    else{
+       if(c>a){
+        console.log("C is big.");
+       }
+       else{
+        console.log("A is big.");
+       }
+    }
+}
+}
+
+var a = parseInt(prompt("Enter the value of A : "));
+var b = parseInt(prompt("Enter the value of B : "));
+var c = parseInt(prompt("Enter the value of C : "));
+
+max();
+
+</script>
