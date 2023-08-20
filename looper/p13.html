@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+  function fact(x) {
+      if (x == 0 || x == 1) {
+        return 1;
+      } 
+      else {
+        return x * fact(x - 1);
+      }
+  }
+
+  var a = parseInt(prompt("Enter the number : "));
+  console.log(fact(a));
+</script>

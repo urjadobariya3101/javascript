@@ -1,0 +1,32 @@
+<script type="text/javascript">
+
+  var a = parseInt(prompt("Enter a positive number: "));
+  var Prime = true;
+
+  if (a === 1) {
+    document.write("<h2>1 is neither prime nor composite number. </h2>");
+
+  } 
+  
+  else if (a > 1) {
+    for (var i = 2; i < a; i++) {
+      if (a % i == 0) {
+        Prime = false;
+        break;
+      }
+    }
+
+    if (Prime) {
+      document.write("<h2>" + a + " : is a prime number</h2>");
+    }
+    
+    else {
+      document.write("<h2>" + a + " : is a not prime number</h2>");
+    }
+
+  }
+  
+  else {
+    document.write("<h2>" + a + " : is a not prime number</h2>");
+  }
+</script>
